@@ -1,0 +1,302 @@
+.field-sm {
+
+	&__label {
+		font-size: 14px;
+		line-height: 1.25;
+		margin-bottom: .5rem;
+		display: block;
+
+	}
+
+	&__wrapper {
+		position: relative;
+	}
+
+	input {
+		// display: flex;
+		// align-items: center;
+		padding: 15px 16px;
+		gap: 10px;
+		height: 48px;
+		border: 2px solid #E2EBE3;
+		border-radius: 10px;
+		font-size: 14px;
+
+		&[type='tel'] {
+			padding-left: 60px;
+			font-weight: 700;
+		}
+
+		&::placeholder {
+			color: $text;
+		}
+
+	}
+
+	&__error {}
+
+
+}
+
+.field {
+	&__head {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__counter-textarea {
+		font-size: 12px;
+	}
+
+	&__label {
+		font-size: 1rem;
+		font-weight: 700;
+		line-height: 1.25;
+		margin-bottom: 1rem;
+		display: flex;
+
+		@media (max-width: em(767.98)) {
+			font-size: $mobileFont;
+			margin-bottom: 0.5rem;
+		}
+
+		.link {
+			margin-left: auto;
+			color: $accentColor;
+		}
+
+		span {
+			font-size: 12px;
+			font-weight: 400;
+		}
+	}
+
+	&__wrapper {
+		position: relative;
+	}
+
+	&__icon {
+		position: absolute;
+		top: 50%;
+		translate: 0 -50%;
+		width: 20px;
+		height: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		fill: #D1DAD9;
+
+		span {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 20px;
+		}
+
+		svg {
+			max-height: 100%;
+		}
+	}
+
+	textarea,
+	input {
+		width: 100%;
+		padding: 15px 16px;
+		gap: 10px;
+		border: 2px solid #E2EBE3;
+		border-radius: 10px;
+		font-size: 14px;
+		transition: .2s ease-in-out;
+
+		&::placeholder {
+			color: $text;
+		}
+
+		&:focus {
+			border-color: $accentColor;
+		}
+	}
+
+	input {
+		// display: flex;
+		// align-items: center;
+		height: 48px;
+
+		@media (max-width: em(767.98)) {
+			height: 42px;
+		}
+
+		&[type='tel'] {
+			padding-left: 60px;
+			font-weight: 700;
+		}
+
+	}
+
+	textarea {
+		resize: none;
+		height: 144px;
+	}
+
+	&__error {
+		margin-top: 1rem;
+		font-size: 12px;
+		line-height: 1.25;
+		color: #F1001C;
+		display: none;
+	}
+
+	&__placeholder {
+		position: absolute;
+		top: 50%;
+		translate: 0 -50%;
+		left: 15px;
+		font-size: 14px;
+		color: $text;
+	}
+
+	&--radio {
+		width: 100%;
+
+		.field {
+			&__radio-btns {
+				display: flex;
+				gap: 1rem;
+				align-items: center;
+
+				@media (min-width:em(768)) {
+
+					height: 48px;
+				}
+			}
+		}
+	}
+
+	&--inputs {
+		.field {
+			&__inputs {
+				display: flex;
+				gap: 0.5rem;
+			}
+		}
+
+		input {
+			text-align: center;
+			flex: 1;
+		}
+	}
+
+	&--error {
+		input {
+			border-color: #F1001C;
+		}
+
+		.field {
+			&__error {
+				display: block;
+			}
+		}
+	}
+
+	&--password {
+
+		input {
+			padding-right: 42px;
+		}
+
+		.field {
+			&__icon {
+				right: 1rem;
+				transition: .2s ease-in-out;
+
+				@media(any-hover:hover) {
+					&:hover {
+						fill: $accentColor;
+					}
+				}
+
+				&.show-password {
+					fill: $accentColor;
+
+					.field {
+						&__hide-pass {
+							display: block;
+						}
+
+						&__show-pass {
+							display: none;
+						}
+					}
+				}
+			}
+
+			&__hide-pass {
+				display: none;
+			}
+		}
+	}
+
+	&--icon {
+		input {
+			padding-right: 42px;
+		}
+
+		.field {
+			&__icon {
+				right: 15px;
+				color: $text;
+			}
+		}
+	}
+
+	&--icons {
+		input {
+			padding-left: 42px;
+			padding-right: 42px;
+		}
+
+		.field {
+			&__icon {
+				right: 15px;
+				color: $text;
+				font-size: 14px;
+			}
+		}
+	}
+
+	&--placeholder {
+		input {
+			padding-left: 42px;
+		}
+	}
+}
+
+.field-horizontal {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	flex-wrap: wrap;
+	font-size: 14px;
+	color: $text;
+
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		max-width: 296px;
+		gap: 1rem;
+
+		.field {
+			flex: 1;
+		}
+	}
+
+	&--choose {
+		color: $mainColor;
+
+		input {
+			border-color: $accentColor;
+		}
+	}
+}

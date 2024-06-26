@@ -1,0 +1,21 @@
+.expert-want {
+	&__labels {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+
+		@media (min-width:em(768)) {
+			height: 100% !important;
+		}
+	}
+
+	&__btn {
+		width: fit-content;
+	}
+
+	.expert-about__btn {
+		@media (min-width: em(768)) {
+			display: none !important;
+		}
+	}
+}

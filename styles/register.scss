@@ -1,0 +1,186 @@
+.frame-register {
+	margin: 1.5rem 0 60px;
+	padding: 60px 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	@media (max-width: em(767.98)) {
+		padding: 1rem;
+	}
+}
+
+.register {
+	max-width: 378px;
+	margin: 0 auto;
+
+	&__img {
+		margin: 0 auto 2rem;
+
+		@media (max-width: em(767.98)) {
+			margin-bottom: 1rem;
+			width: 100px;
+		}
+	}
+
+	&__icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		border: 1px solid $lightGreyColor;
+		margin: 0 auto 2rem;
+
+		@media (max-width: em(767.98)) {
+			margin-bottom: 1rem;
+		}
+	}
+
+	&__text {
+		margin-bottom: 2rem;
+		font-size: 14px;
+		line-height: 1.285;
+
+		@media (max-width: em(767.98)) {
+			margin-bottom: 1rem;
+			font-size: 12px;
+		}
+	}
+
+	&__item {
+		display: flex;
+		gap: 1.5rem;
+		flex-direction: column;
+
+		@media (max-width: em(767.98)) {
+			gap: 1rem;
+		}
+	}
+
+	.field {
+		&__label {
+			margin-bottom: 0.5rem;
+		}
+	}
+
+	&__fields {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: 30px;
+		line-height: 110%;
+		text-align: center;
+		color: $greenColor;
+		margin-bottom: 2rem;
+
+		@media (max-width: em(767.98)) {
+			font-size: 18px;
+			margin-bottom: 1rem;
+		}
+	}
+
+	label {
+		font-weight: 400;
+
+		@media (min-width:em(768)) {
+
+			font-size: 16px;
+		}
+	}
+
+	.checkbox-input {
+		font-size: 12px;
+		line-height: 140%;
+
+		color: #5A6E53;
+
+
+	}
+
+	&__enter {
+		font-size: 14px;
+		line-height: 1.285;
+
+		a {
+			color: $accentColor;
+			font-weight: 700;
+		}
+
+		@media (max-width: em(767.98)) {
+			font-size: 12px;
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		.btn-md {
+			width: 100%;
+
+			svg {
+				width: 18px;
+				height: 18px;
+			}
+		}
+	}
+
+	&__confirm {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	&__confirm-phone {
+		font-size: 14px;
+		line-height: 1.285;
+
+		@media (max-width: em(767.98)) {
+			font-size: 12px;
+		}
+
+		span {
+			color: $accentColor;
+		}
+	}
+
+	&__confirm-title {
+		font-weight: 700;
+		font-size: 1rem;
+
+		@media (max-width: em(767.98)) {
+			font-size: $mobileFont;
+		}
+	}
+
+	&__confirm-inputs {
+		display: flex;
+		gap: 0.5rem;
+
+		input {
+			text-align: center;
+		}
+	}
+
+	&__confirm-list {
+		font-size: 12px;
+		line-height: 130%;
+		color: $text;
+	}
+
+	&__row {
+		display: flex;
+		gap: 1rem .5rem;
+
+		@media (min-width:em(768)) {
+			flex-direction: column;
+		}
+	}
+}

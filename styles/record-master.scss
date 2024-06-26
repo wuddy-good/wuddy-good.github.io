@@ -1,0 +1,165 @@
+.record-master {
+	&__back {
+		margin-bottom: 20px;
+	}
+
+	.grid {
+		@media (max-width: em(767.98)) {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	&__main {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+}
+
+.record-form {
+	@extend .frame;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	// width: 578px;
+	// flex: 0 0 578px;
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	&__chat {
+		background: #F7FAF7;
+		border: 1px solid #E2EBE3;
+		border-radius: 15px;
+		padding: 1rem;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	&__chat-emoji {
+		font-weight: 700;
+		font-size: 30px;
+		line-height: 1.267;
+		flex: 0 0 30px;
+
+		@media (max-width: em(767.98)) {
+			display: none;
+		}
+	}
+
+	&__chat-content {
+		width: 100%;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 130%;
+
+		@media (min-width:em(768)) {
+			max-width: 236px;
+
+		}
+
+		@media (max-width: em(767.98)) {
+			text-align: center;
+		}
+	}
+
+	&__chat-btns {
+		@media (min-width:em(768)) {
+			margin-left: auto;
+
+		}
+
+		@media (max-width: em(767.98)) {
+			width: 100%;
+		}
+
+
+	}
+
+	&__chat-btn {
+		white-space: nowrap;
+
+		@media (max-width: em(767.98)) {
+			width: 100%;
+		}
+	}
+
+	.field {
+		&__label {
+			margin-bottom: 0.5rem;
+			font-weight: 400;
+
+		}
+	}
+}
+
+.session-info {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	@extend .frame;
+
+	@media (max-width: em(767.98)) {
+		gap: 1rem;
+	}
+
+	// .session-info__list
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	// .session-info__sum
+
+	&__sum {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		line-height: 120%;
+
+		@media (max-width: em(767.98)) {
+			font-size: $mobileFont;
+		}
+
+		span {
+			@extend .title-h4;
+
+			@media (max-width: em(767.98)) {
+				font-size: 1rem;
+			}
+		}
+	}
+
+	// .session-info__btn
+
+	&__btn {
+		width: 100%;
+
+		@media (max-width: em(767.98)) {
+			padding: 15px;
+		}
+
+		svg {
+			@media (min-width:em(768)) {
+				display: none;
+			}
+		}
+	}
+
+	.checkbox {
+		@media (max-width: em(767.98)) {
+			display: none;
+		}
+	}
+
+
+}

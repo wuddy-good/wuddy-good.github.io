@@ -1,0 +1,181 @@
+.our-team {
+	background-color: $lightColor;
+	border-bottom: 1px solid $borderColor;
+
+	&__more {
+		margin: .5rem auto 0;
+		order: 1;
+		width: 100%;
+
+		@media (min-width:em(768)) {
+			display: none;
+		}
+	}
+
+	.section {
+
+		// .section__head
+
+		&__head {
+			margin-bottom: 0;
+
+		}
+
+		// .section__title
+
+		&__title {}
+	}
+
+
+
+	// .our-team__inner
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+
+		@media (max-width: em(1024)) {
+			gap: 2rem;
+		}
+
+		@media (max-width: em(767.98)) {
+			gap: 1.5rem;
+		}
+	}
+
+	// .our-team__avatars
+
+	&__avatars {
+		display: flex;
+		justify-content: center;
+		translate: 60px 0;
+
+		@media (max-width: em(1024)) {
+			translate: 45px 0;
+		}
+
+		@media (max-width: em(575.98)) {
+			translate: 25px 0;
+		}
+	}
+
+	// .our-team__cards
+
+	&__cards {
+		display: grid;
+		gap: 1rem;
+
+		@media (min-width:em(768)) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@media (max-width: em(767.98)) {
+			grid-template-columns: auto;
+			gap: 0.5rem;
+		}
+	}
+}
+
+.container {}
+
+.our-avatar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	border: 5px solid $lightColor;
+	background-color: $lightGreyColor;
+	aspect-ratio: 1/1;
+	width: 180px;
+	flex: 0 0 180px;
+	position: relative;
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: $accentColor;
+	overflow: hidden;
+
+	&:nth-child(2) {
+		left: -24px;
+	}
+
+	&:nth-child(3) {
+		left: -48px;
+	}
+
+	&:nth-child(4) {
+		left: -72px;
+	}
+
+	&:nth-child(5) {
+		left: -96px;
+	}
+
+	&:nth-child(6) {
+		left: -120px;
+	}
+
+	img {
+		object-fit: cover;
+	}
+
+	@media (max-width: em(1024)) {
+		&:nth-child(2) {
+			left: -20px;
+		}
+
+		&:nth-child(3) {
+			left: -40px;
+		}
+
+		&:nth-child(4) {
+			left: -60px;
+		}
+
+		&:nth-child(5) {
+			left: -80px;
+		}
+
+		&:nth-child(6) {
+			left: -100px;
+		}
+
+		&:nth-child(3) {
+			display: none;
+		}
+
+	}
+
+	@media (max-width: em(991.98)) {
+		width: 120px;
+		flex: 0 0 120px;
+		font-size: 18px;
+	}
+
+	@media (max-width: em(575.98)) {
+		width: 76px;
+		flex: 0 0 76px;
+		font-size: $mobileFont;
+
+		&:nth-child(2) {
+			left: -10px;
+		}
+
+		&:nth-child(3) {
+			left: -20px;
+		}
+
+		&:nth-child(4) {
+			left: -30px;
+		}
+
+		&:nth-child(5) {
+			left: -40px;
+		}
+
+		&:nth-child(6) {
+			left: -50px;
+		}
+	}
+
+}

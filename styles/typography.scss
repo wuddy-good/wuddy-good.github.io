@@ -1,0 +1,31 @@
+.title-h4,
+.title-h5,
+.title-h6 {
+	font-weight: 700;
+	line-height: 1.28;
+}
+
+.title-h4 {
+	font-size: 22px;
+}
+
+.title-h5 {
+	font-size: 18px;
+}
+
+.title-h6 {
+	font-size: 1rem;
+}
+
+.text {
+	font-size: 14px;
+	line-height: 1.286;
+}
+
+.sub-text {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 100%;
+	color: $text;
+
+}

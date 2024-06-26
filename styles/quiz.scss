@@ -1,0 +1,501 @@
+.test {
+	.team-main__cards {
+		grid-template-columns: repeat(4, 1fr);
+
+		@media (max-width: em(1023)) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@media (max-width: em(767.98)) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (max-width: em(575.98)) {
+			grid-template-columns: auto;
+		}
+	}
+}
+
+.test-quiz {
+	&__inputs {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0.875rem;
+		grid-column: 1/3;
+	}
+
+	&__steps {
+		padding: 1.5rem 0;
+		display: flex;
+		gap: 0.875rem;
+		list-style: none;
+		counter-reset: my-counter;
+
+		@media (max-width: em(767.98)) {
+			padding: 1rem 0;
+		}
+	}
+
+	&__step {
+		font-size: 14px;
+		line-height: 120%;
+		color: $text;
+		counter-increment: my-counter;
+		display: flex;
+		align-items: center;
+		gap: $gap10;
+		position: relative;
+		flex: 1;
+		justify-content: center;
+
+		@media (min-width:em(768)) {
+			padding-bottom: 20px;
+		}
+
+		@media (max-width: em(767.98)) {
+			font-size: 0;
+			gap: 0;
+		}
+
+		&::after {
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 4px;
+			content: '';
+			bottom: 0;
+			background: $borderColor;
+			border-radius: 11px;
+
+			@media (max-width: em(767.98)) {
+				display: none;
+			}
+		}
+
+		&::before {
+			content: counter(my-counter);
+			font-weight: 700;
+			font-size: 12px;
+			line-height: 1.25;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 15px;
+			width: 32px;
+			height: 32px;
+			color: $text;
+			background: rgba(255, 255, 255, 0.2);
+			border: 2px solid $borderColor;
+			border-radius: 12px;
+
+		}
+
+		&.active {
+			color: $brownColor;
+			font-weight: 700;
+
+			&::before {
+				border-color: $brownColor;
+				color: $brownColor;
+			}
+
+			&::after {
+				background-color: $brownColor;
+			}
+
+		}
+
+		&.current {
+			font-weight: 700 !important;
+			color: $mainColor !important;
+
+			@media (max-width: em(767.98)) {
+
+				&::before {
+					border-color: $mainColor !important;
+
+					color: $mainColor;
+				}
+			}
+
+			&::after {
+				background-color: $brownColor;
+			}
+
+		}
+	}
+
+	&__blocks {
+		display: grid;
+		gap: 0.875rem;
+	}
+
+	&__block {
+		padding: 1.5rem;
+		background: #F6FAF7;
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		@extend .border;
+		border-radius: $radius15;
+
+		@media (max-width: em(767.98)) {
+			padding: 1rem;
+			gap: 1rem;
+		}
+
+		&--mobile-light {
+			@media (max-width: em(767.98)) {
+				background-color: $lightColor;
+				border: none;
+				padding: 0;
+
+				.test-quiz {
+					&__block-title {
+						font-size: 1rem;
+					}
+				}
+			}
+		}
+	}
+
+	&__block-head {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	&__block-title {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 120%;
+
+		@media (max-width: em(767.98)) {
+			font-size: 14px;
+		}
+	}
+
+	&__input {
+		.field {
+			input {
+				height: 54px;
+
+				@media (max-width: em(767.98)) {
+					height: 42px;
+					background-color: $lightColor;
+				}
+			}
+		}
+	}
+
+	&__block-text {
+		font-size: 14px;
+		line-height: 120%;
+	}
+
+	&__radio-btns {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 0.875rem;
+
+		@media (max-width: em(1024)) {
+			grid-template-columns: repeat(4, 1fr);
+		}
+
+		@media (max-width: em(991.98)) {
+			grid-template-columns: repeat(3, 1fr);
+
+		}
+
+		@media (max-width: em(767.98)) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (max-width: em(575.98)) {
+			grid-template-columns: auto;
+		}
+	}
+
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.5rem;
+
+		@media (max-width: em(1023)) {
+			gap: 1.5rem 1rem;
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (max-width: em(575.98)) {
+			grid-template-columns: auto;
+		}
+	}
+
+	&__item-body,
+	&__item {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+
+		@media (max-width: em(575.98)) {
+			gap: 1rem;
+		}
+
+	}
+
+	&__item {
+		@media (max-width: em(767.98)) {
+			flex-direction: column;
+			padding: 16px;
+			background: #F6FAF7;
+			border: 1px solid #E2EBE3;
+			border-radius: 15px;
+		}
+
+	}
+
+	&__item-header {
+		display: flex;
+		gap: 1.5rem;
+
+		@media (min-width:em(576)) {
+			flex-direction: column;
+
+		}
+
+		@media (max-width: em(575.98)) {
+			gap: 1rem;
+			align-items: center;
+			padding-bottom: 1rem;
+			border-bottom: 1px solid $lightGreyColor;
+		}
+	}
+
+	&__item-img {
+		aspect-ratio: 1/1;
+		overflow: hidden;
+		border-radius: 50%;
+		max-width: 246px;
+
+		@media (min-width:em(576)) {
+			margin: 0 auto;
+
+		}
+
+		@media (max-width: em(575.98)) {
+			width: 60px;
+		}
+
+		picture,
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__item-title {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 120%;
+
+		@media (max-width: em(575.98)) {
+			font-size: 14px;
+		}
+	}
+
+	&__item-list {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+
+		@media (max-width: em(575.98)) {
+			gap: 0.5rem;
+		}
+	}
+
+	&__radio-btn-content {
+		flex: 1;
+
+		span {
+			font-size: 12px;
+			color: $text;
+
+			@media (min-width:em(576)) {
+				display: block;
+				text-align: center;
+
+			}
+		}
+	}
+
+
+
+	&__radio-btn {
+		position: relative;
+		cursor: pointer;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 1.285;
+		gap: 10px;
+		display: flex;
+		align-items: center;
+
+		@media (min-width:em(576)) {
+			text-align: center;
+			border-radius: 10px;
+			justify-content: space-between;
+			flex-direction: row;
+			padding: 15px;
+			height: 54px;
+			background: #FFFFFF;
+			border: 2px solid #E2EBE3;
+
+
+			&.radio-btn-checked {
+				background-color: $lightGreyColor;
+				border-color: $accentColor;
+			}
+		}
+
+		input {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 0;
+			height: 0;
+			opacity: 0;
+
+			&:checked {
+				&+span {
+					border-color: $accentColor;
+
+					&::after {
+						scale: 1;
+					}
+				}
+			}
+
+
+		}
+
+		&>span {
+			content: '';
+			display: inline-block;
+			border: 2px solid rgba($accentColor, .3);
+			width: 1.5rem;
+			height: 1.5rem;
+			border-radius: 0.25rem;
+			order: -1;
+			position: relative;
+			transition: border-color .2s ease-in-out;
+			flex: 0 0 1.5rem;
+
+			&::after {
+				content: '';
+				width: 0.75rem;
+				height: 0.75rem;
+				background: url('../public/img/icons/checked.svg') center/contain no-repeat;
+				top: 50%;
+				left: 50%;
+				translate: -50% -50%;
+				position: absolute;
+				scale: 0;
+				transition: scale .2s ease-in-out;
+
+			}
+		}
+
+		@media(any-hover:hover) {
+			&:hover {
+				background-color: $lightGreyColor;
+			}
+		}
+
+		&.rounded {
+			&>span {
+				content: '';
+				display: inline-block;
+				border: 2px solid rgba($accentColor, .3);
+				border-radius: 50%;
+				width: 1.5rem;
+				height: 1.5rem;
+				flex: 0 0 1.5rem;
+				order: -1;
+				position: relative;
+				transition: border-color .2s ease-in-out;
+
+				&::after {
+					content: '';
+					border-radius: 50%;
+					width: 0.5rem;
+					height: 0.5rem;
+					background-color: $accentColor;
+					top: 50%;
+					left: 50%;
+					translate: -50% -50%;
+					position: absolute;
+					scale: 0;
+					transition: scale .2s ease-in-out;
+				}
+			}
+
+			input {
+				&:checked {
+					&+span {
+						border-color: $accentColor;
+
+						&::after {
+							scale: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 40px;
+
+		@media (max-width: em(575.98)) {
+			margin-top: 1rem;
+		}
+	}
+
+	&__checkboxes {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 15px 1.5rem;
+
+		@media (max-width: em(1023)) {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 1rem;
+		}
+
+		@media (max-width: em(767.98)) {
+			grid-template-columns: auto;
+			gap: 0.5rem;
+		}
+	}
+
+	&__next-btn {
+		width: 137px;
+
+		@media (max-width: em(575.98)) {
+			font-size: 14px;
+
+			svg {
+				width: 1rem;
+				height: 1rem;
+				flex: 0 0 1rem;
+			}
+		}
+	}
+
+	&__toggler {
+		max-width: 434px;
+	}
+}

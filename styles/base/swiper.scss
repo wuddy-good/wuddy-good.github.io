@@ -1,0 +1,113 @@
+.reviews__slider {}
+
+.swiper {
+	overflow: hidden;
+}
+
+.swiper-initialized {
+	touch-action: pan-y;
+}
+
+.swiper-wrapper {
+	width: 100%;
+	height: 100%;
+	box-sizing: content-box;
+	display: flex;
+	position: relative;
+}
+
+.swiper-vertical {
+	.swiper-wrapper {
+		flex-direction: column;
+	}
+}
+
+.swiper-autoheight {
+	.swiper-wrapper {
+		align-items: flex-start;
+	}
+}
+
+.swiper-initialized {
+	.swiper-slide {
+		flex-shrink: 0;
+	}
+}
+
+.swiper-android {
+
+	.swiper-slide,
+	.swiper-wrapper {
+		transform: translate3d(0px, 0, 0);
+	}
+}
+
+.swiper-button-lock {
+	display: none !important;
+}
+
+.slider-navs {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.slide-btn-next,
+.slide-btn-prev {
+	position: relative;
+	width: 20px;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&::after {
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		height: 100%;
+		left: 50%;
+		translate: -50% -50%;
+		content: url('data:image/svg+xml;charset=UTF-8,<svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.2802 8.16285L6.81601 1.69864L8 0.514649L16.4853 8.99993L8 17.4852L6.816 16.3012L13.2799 9.83728L0.777777 9.83727L0.777759 8.16286L13.2802 8.16285Z" fill="%2319453F"/></svg>');
+		line-height: 0;
+		display: inline-block;
+	}
+
+	&.swiper-button-disabled {
+		opacity: .5;
+	}
+}
+
+.slide-btn-prev {
+	transform: scale(-1, 1);
+}
+
+.expert-reviews-slider {
+	margin-right: -1.5rem;
+
+	.swiper-slide {}
+
+	.review-card {
+		height: 100%;
+
+		@media (min-width:em(768)) {
+			width: 377px;
+
+		}
+	}
+}
+
+.swiper-scrollbar {
+	// height: 3px;
+
+	background: #F6FAF7;
+	border-radius: 111px;
+
+	.swiper-scrollbar-drag {
+		background: #00463F;
+		height: 3px;
+		cursor: grab;
+		border-radius: 111px;
+
+	}
+}

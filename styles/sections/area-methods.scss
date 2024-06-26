@@ -1,0 +1,49 @@
+.area-methods {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	// .area-methods__title
+
+	&__title {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 1.28;
+	}
+
+	// .area-methods__input
+
+	&__input {}
+
+	// .area-methods__grid
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1rem 1.5rem;
+
+		@media (max-width: em(1199.98)) {
+
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@media (max-width: em(1023.98)) {
+
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (max-width: em(767.98)) {
+			grid-template-columns: auto;
+		}
+	}
+}
+
+.field {
+
+	// .field__input
+
+	&__input {}
+
+	// .field__error
+
+	&__error {}
+}

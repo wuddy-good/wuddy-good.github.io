@@ -1,0 +1,19 @@
+.simplebar-track {
+	&.simplebar-vertical {
+		width: 4px !important;
+
+		background: #DFE8E5 !important;
+		border-radius: 111px !important;
+		margin-right: 4px;
+	}
+}
+
+.simplebar-scrollbar {
+	&::before {
+		left: 0 !important;
+		right: 0 !important;
+		background: $accentColor !important;
+		width: 4px;
+		opacity: 1 !important;
+	}
+}

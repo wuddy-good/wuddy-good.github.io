@@ -1,0 +1,36 @@
+.avatar {
+	width: 160px;
+	aspect-ratio: 1/1;
+	flex: 0 0 160px;
+	background-color: $lightGreyColor;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	overflow: hidden;
+
+	img {
+		object-position: center;
+		object-fit: cover;
+	}
+
+	@media (max-width: em(767.98)) {
+		width: 100px;
+		flex: 0 0 100px;
+
+
+	}
+
+	&--sm {
+		width: 80px;
+		flex: 0 0 80px;
+
+		@media (max-width: em(767.98)) {
+			width: 50px;
+			flex: 0 0 50px;
+		}
+	}
+
+
+
+}

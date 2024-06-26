@@ -1,0 +1,63 @@
+.checkbox-input {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	cursor: pointer;
+	font-size: .875rem;
+
+	&>span {
+		content: '';
+		display: inline-block;
+		border: 2px solid rgba($accentColor, .3);
+		background-color: #fff;
+		width: 1.5rem;
+		height: 1.5rem;
+		border-radius: 0.25rem;
+		order: -1;
+		position: relative;
+		transition: border-color .2s ease-in-out;
+		flex: 0 0 1.5rem;
+
+		&::after {
+			content: '';
+			width: 0.75rem;
+			height: 0.75rem;
+			background: url('../../public/img/icons/checked.svg') center/contain no-repeat;
+			top: 50%;
+			left: 50%;
+			translate: -50% -50%;
+			position: absolute;
+			scale: 0;
+			transition: scale .2s ease-in-out;
+
+		}
+	}
+
+	input {
+		position: absolute;
+		left: 0;
+		top: 0;
+		opacity: 0;
+		width: 0;
+		height: 0;
+
+		&:checked {
+			&+span {
+				border-color: $accentColor;
+
+				&::after {
+					scale: 1;
+				}
+			}
+		}
+	}
+
+	@media(any-hover:hover) {
+		&:hover {
+			&>span {
+				border-color: $accentColor;
+			}
+		}
+	}
+}

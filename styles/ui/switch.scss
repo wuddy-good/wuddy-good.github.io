@@ -1,0 +1,46 @@
+.switch {
+	display: inline-flex;
+	align-items: center;
+	gap: .5rem;
+	font-size: 14px;
+
+	input {
+		cursor: pointer;
+
+		appearance: none;
+		position: relative;
+		border: 2px solid $accentColor;
+		border-radius: 100px;
+		width: 48px;
+		height: 24px;
+		background-color: $lightGreyColor;
+		transition: .2s ease-in-out;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 6px;
+			width: .5rem;
+			aspect-ratio: 1;
+			background-color: $accentColor;
+			border-radius: 50%;
+			transform: translate(0, -50%);
+			transition: .2s ease-in-out;
+		}
+
+		&:checked {
+			background-color: $lightColor;
+
+			&::before {
+				transform: translate(24px, -50%);
+			}
+		}
+
+
+	}
+
+	&__line {
+		flex: 0 0 48px;
+	}
+}

@@ -1,0 +1,25 @@
+.noUi-horizontal {
+	height: 5px;
+	box-shadow: none;
+	border: none;
+	border-radius: 5px;
+	background-color: rgba($accentColor, .1);
+
+	.noUi-handle {
+		cursor: grab;
+		border-radius: 50%;
+		background-color: $lightColor;
+		width: 18px;
+		height: 18px;
+		border: 1px solid #DFDFDF;
+
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+
+	.noUi-connect {
+		background-color: $accentColor;
+	}
+}

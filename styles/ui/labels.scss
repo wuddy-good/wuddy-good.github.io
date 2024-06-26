@@ -1,0 +1,22 @@
+.item-label {
+
+
+	padding: 15px;
+	background: $lightColor;
+	@extend .border;
+	border-radius: $radius10;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	justify-content: center;
+	// .item-label__title
+
+	&__title {}
+
+	// .item-label__content
+
+	&__content {
+		font-weight: 700;
+	}
+}

@@ -1,0 +1,128 @@
+// Базові стилі спойлерів
+// Сніппет (HTML): spoller
+
+// Блок зі спойлерами
+.spollers {
+	display: grid;
+	gap: 15px;
+}
+
+// Спойлер
+.spollers__item {
+	background: #FFFFFF;
+	border: 1px solid $lightGreyColor;
+	border-radius: 15px;
+
+}
+
+// Заголовок спойлера
+.spollers__title {
+	padding: 24px 32px;
+	width: 100%;
+	cursor: default;
+	text-align: left;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 120%;
+	position: relative;
+	list-style: none;
+
+	@media (max-width: em(767.98)) {
+		font-size: 1rem;
+		padding: 1rem 2rem 1rem 1rem;
+	}
+
+	&::marker {}
+
+	._spoller-init & {
+		cursor: pointer;
+
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			right: 2rem;
+			top: 50%;
+			background-color: $accentColor;
+			height: 2px;
+			width: 8px;
+			transition: transform 0.2s ease-in-out;
+
+			@media (max-width: em(767.98)) {
+				right: 1rem;
+				background-color: $mainColor;
+				height: 1px;
+			}
+		}
+
+		&::before {
+			transform: translate(-75%, -50%) rotate(40deg);
+		}
+
+		&::after {
+			transform: translate(0, -50%) rotate(-40deg);
+		}
+
+		&._spoller-active {
+			color: $accentColor;
+
+			&::before {
+				transform: translateX(-75%) rotate(-40deg);
+			}
+
+			&::after {
+				transform: rotate(40deg);
+			}
+		}
+
+		/*
+		._spoller-init & {
+			position: relative;
+			width: 100%;
+			text-align: left;
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				right: 0;
+				top: rem(12);
+				height: rem(1);
+				transition: all 0.3s ease 0s;
+				width: rem(10);
+				background-color: #000;
+			}
+			&::before {
+				transform: rotate(40deg);
+				right: rem(7);
+			}
+			&::after {
+				transform: rotate(-40deg);
+			}
+		}
+		&._spoller-active {
+			&::before {
+				transform: rotate(-40deg);
+			}
+			&::after {
+				transform: rotate(40deg);
+			}
+		}
+		*/
+	}
+}
+
+// Контент спойлера
+.spollers__body {
+	padding: 0 2rem 1.5rem;
+	line-height: 120%;
+
+	span {
+		font-weight: 700;
+		color: #CA6C46;
+	}
+
+	@media (max-width: em(767.98)) {
+		padding: 0 1rem 1rem;
+		font-size: $mobileFont;
+	}
+}

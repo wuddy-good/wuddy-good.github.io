@@ -1,0 +1,89 @@
+.select_select-type-one {
+	&._select-open {
+		.select {
+
+			&__title {
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+		}
+	}
+
+	.select {
+
+		&__title,
+		&__options {
+			border: 2px solid $lightGreyColor;
+			background-color: $lightColor;
+			border-radius: 10px;
+		}
+
+		&__title {
+
+			min-height: 48px;
+
+			@media (max-width: em(767.98)) {
+				min-height: 42px;
+			}
+		}
+
+
+		&__options {
+			top: calc(100% - 2px);
+			border-top: 0;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+		}
+
+		&__value {
+			padding-left: 12px;
+			padding-right: 12px;
+
+			&::after {
+				content: url('data:image/svg+xml;charset=UTF-8,<svg width="6" height="5" viewBox="0 0 6 5" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.63379 3.93725L5.98779 0.25L0.00254297 0.25L2.36479 3.93575C2.43223 4.04304 2.52576 4.13149 2.63665 4.19285C2.74753 4.2542 2.87215 4.28646 2.99888 4.28661C3.12561 4.28676 3.2503 4.2548 3.36133 4.19371C3.47236 4.13261 3.5661 4.04438 3.63379 3.93725Z" fill="black"/></svg>');
+				line-height: 0;
+				display: inline-block;
+				align-self: auto;
+				align-self: center;
+				flex: 0 0 6px;
+			}
+		}
+	}
+}
+
+.select-placeholder {
+	color: $text;
+}
+
+.select_custom {
+	.select {
+		&__title {
+			height: 48px;
+			border: 2px solid $borderColor;
+			border-radius: $radius10;
+			padding: 15px;
+			gap: 10px;
+
+			@extend .border;
+
+			@media (max-width: em(767.98)) {
+				height: 42px;
+				padding: 10px 15px;
+				font-size: $mobileFont;
+			}
+
+		}
+
+		&__value {
+
+
+			&::after {
+				content: url('data:image/svg+xml;charset=UTF-8,<svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.622314 1.95682L5.13546 6.4638C5.44702 6.7739 5.86872 6.948 6.30831 6.948C6.7479 6.948 7.16959 6.7739 7.48116 6.4638L12 1.9516L10.9945 0.947998L6.47613 5.45972C6.43168 5.50416 6.3714 5.52912 6.30854 5.52912C6.24569 5.52912 6.18541 5.50416 6.14096 5.45972L1.62782 0.953213L0.622314 1.95682Z" fill="%23000000"/></svg> ');
+				line-height: 0;
+				display: inline-block;
+			}
+
+		}
+	}
+
+}
